@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  #this nests prjects in the tenants routes so it shows up as tenant[id]/project[id]
+  resources :tenants do
+    resources :projects
+  end
+  
 
   resources :members
   get 'home/index'
@@ -9,7 +14,7 @@ Rails.application.routes.draw do
     
   # *MUST* come *BEFORE* devise's definitions (below)
   as :user do   
-    match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
+   match 'user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
   end
 
   devise_for :users, :controllers => { 

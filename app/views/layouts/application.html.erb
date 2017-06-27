@@ -48,9 +48,8 @@
         <a class="navbar-brand" href="#">SaasApp</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-          </ul>
-          <ul class="nav navbar-right col-md-4">
             
+             
             <% if current_user %>
 
             <li>
@@ -61,6 +60,9 @@
             </li>
 
           <% end %>
+          </ul>
+          <ul class="nav navbar-right col-md-4">
+           
 
           <% if current_user %>
           
@@ -70,9 +72,9 @@
                 
                 </li>
                 
-                <li class="col-md-1"> </li>
+               
                 
-                <li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
+                <li class="col-md-4 logout"><%= link_to('Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
                 
                     <% else %>
                 
