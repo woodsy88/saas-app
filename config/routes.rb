@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :artifacts
   #this nests prjects in the tenants routes so it shows up as tenant[id]/project[id]
   resources :tenants do
     resources :projects
