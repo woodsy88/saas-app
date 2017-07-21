@@ -21,12 +21,16 @@
       <%= f.text_field :name, :class => 'form-control' %>
     </div>
   </div>
+  
+  
   <div class="control-group">
     <%= f.label :upload, value: 'File to upload', :class => 'control-label' %>
     <div class="controls">
       <%= f.file_field :upload, :class => 'form-control' %>
     </div>
   </div>
+  
+  
   <%= f.hidden_field :project_id %>
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
